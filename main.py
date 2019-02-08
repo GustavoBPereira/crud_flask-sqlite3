@@ -6,6 +6,10 @@ app.secret_key = 'phi'
 
 conn = LivroDao('livros.db')
 
+#create
+#read
+#update
+#delete
 @app.route('/')
 def index():
 	lista = conn.read_all()
@@ -42,4 +46,5 @@ def change():
 	conn.update(id,titulo,autor,editora)
 	return redirect(url_for('index'))
 	
-app.run(debug=True)
+if __name__ == '__main__':
+	app.run()
